@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Movement</title>
+<style>
+  #character1 {
+    position: absolute;
+    top: 50%;
+    left: 50px; /* Initial position */
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+</style>
+</head>
+<body>
+
+<div id="character1"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const character1 = document.getElementById("character1");
+  const speed = 5; // Adjust this value to change the speed of movement
+
+  // Function to move character left
+  function moveLeft() {
+    let currentPosition = parseInt(character1.style.left) || 0;
+    character1.style.left = currentPosition - speed + "px";
+  }
+
+  // Function to move character right
+  function moveRight() {
+    let currentPosition = parseInt(character1.style.left) || 0;
+    character1.style.left = currentPosition + speed + "px";
+  }
+
+  // Event listeners for arrow key presses
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowLeft") {
+      moveLeft();
+    } else if (event.key === "ArrowRight") {
+      moveRight();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

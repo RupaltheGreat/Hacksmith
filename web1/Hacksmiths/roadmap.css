@@ -1,0 +1,77 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  margin: 50px auto;
+}
+
+.score-box,
+.hint-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.road {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #ddd;
+}
+
+.river {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  background-color: #add8e6;
+  z-index: -1;
+}
+
+.character {
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  z-index: 1;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.boat {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 60px;
+  height: 30px;
+  background-color: brown;
+  z-index: 2;
+  cursor: pointer;
+  transition: left 1s;
+}
+
+/* Hover effect for boat */
+.boat:hover {
+  transform: scale(1.1);
+}
+
+/* JavaScript can control classes for showing popups and moving the boat */
